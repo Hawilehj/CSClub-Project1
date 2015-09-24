@@ -2,15 +2,15 @@ import javax.swing.JOptionPane;
 
 public class Slide {
 	static int MAX_CHOICES = 4;
-	String slideTitle;
-	String slideText;
+	private String slideTitle;
+	private String slideText;
 	int numberOfChoices;
 	Choice[] slideChoice;
 	
 	public Slide(String title, String text) {
 		slideTitle = title;	
 		slideText = text;
-		slideChoice = new Choice[MAX_CHOICES];
+		slideChoice = new Choice[MAX_CHOICES]; //Should choices be based of of numberOfChoices?- Choice[numberOfChoices];
 		numberOfChoices = 0;
 		
 		//sets up a blank choice array
@@ -31,7 +31,7 @@ public class Slide {
 		slideText = text;
 	}
 	
-	public String getText(){
+	public String getText(){ //Not sure if necessary? has similar part on line 96
 		return slideText;
 	}
 	
@@ -66,8 +66,8 @@ public class Slide {
 	}
 	
 	
-	//using code from http://www.java2s.com/Tutorial/Java/
-	//	0240__Swing/Todisplaysadialogwithalistofchoicesinadropdownlistbox.htm
+	/*using code from http://www.java2s.com/Tutorial/Java/
+		0240__Swing/Todisplaysadialogwithalistofchoicesinadropdownlistbox.htm*/
 	public void displaySlide(String[] choices){
 		String text = getText();
 		String title = getTitle();
